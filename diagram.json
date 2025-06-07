@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "author": "N Sparker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": -0.6, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": -109.2, "left": 3.8, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": -152.1,
+      "left": 178.3,
+      "attrs": { "distance": "2" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -208.8,
+      "left": -7.8,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "uno:11", "led1:A", "orange", [ "v0" ] ],
+    [ "ultrasonic1:GND", "uno:GND.1", "black", [ "v28.8", "h-174" ] ],
+    [ "ultrasonic1:VCC", "uno:5V", "red", [ "v0" ] ],
+    [ "ultrasonic1:TRIG", "uno:9", "green", [ "v19.2", "h-96.4" ] ],
+    [ "bz1:1", "uno:GND.3", "black", [ "v9.6", "h105.6" ] ],
+    [ "bz1:2", "uno:12", "red", [ "v38.4", "h86" ] ],
+    [ "led1:C", "uno:GND.2", "black", [ "v192", "h96.4" ] ]
+  ],
+  "dependencies": {}
+}
